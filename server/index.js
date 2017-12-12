@@ -4,7 +4,7 @@ const app = express();
 
 app.use(express.static(`${__dirname}/../fake`));
 
-router.get('/', (request, response) => {
+app.get('/', (request, response) => {
   response.status(200).end('bruh');
 });
 

@@ -11,3 +11,5 @@ build/
 node_modules/
 
 dsc.tar.gz
+log.csv
+analytics.csv

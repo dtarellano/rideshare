@@ -13,7 +13,7 @@ const generateData = (db, count) => {
     return;
   }
   const query =
-		'INSERT INTO log (id, ride_id, driver_id, driver_loc, rider_loc) VALUES (uuid(), ?, ?, ?, ?);';
+		'INSERT INTO analytics (id, ride_id, driver_id, driver_loc, rider_loc, wait_est) VALUES (uuid(), ?, ?, ?, ?, ?);';
   let counter = count || 0;
   const recurse = () => {
     const params = [];
@@ -22,9 +22,10 @@ const generateData = (db, count) => {
       const driver_id = faker.random.number();
       const driver_loc = createLocation();
       const rider_loc = createLocation();
+      const wait_est = Math.floor(Math.random() * 10) + 1;
       params.push({
         query,
-        params: [ride_id, driver_id, driver_loc, rider_loc],
+        params: [ride_id, driver_id, driver_loc, rider_loc, wait_est],
       });
     }
     return params;

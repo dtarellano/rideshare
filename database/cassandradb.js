@@ -5,8 +5,6 @@ const db = new cassandra.Client({ contactPoints: ['127.0.0.1'], keyspace: 'dispa
 db.connect((err) => {
   if (err) {
     console.log('FAILED TO CONNECT', err);
-  } else {
-    console.log('CREATED A CASSANDRA DB CONNECTION');
   }
 });
 
@@ -18,16 +16,12 @@ const logQuery =
 db.execute(query, (err, results) => {
   if (err) {
     console.log('Failed to insert table', err);
-  } else {
-    console.log('Success here are the results:', results);
   }
 });
 
 db.execute(logQuery, (err, results) => {
   if (err) {
     console.log('Failed to insert analytics table', err);
-  } else {
-    console.log('Success Results: ', results);
   }
 });
 

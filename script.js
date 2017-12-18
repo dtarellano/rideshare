@@ -1,4 +1,4 @@
-function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+const getDistanceFromLatLonInKm = (lat1, lon1, lat2, lon2) => {
   const R = 6371;
   const dLat = deg2rad(lat2 - lat1);
   const dLon = deg2rad(lon2 - lon1);
@@ -8,10 +8,8 @@ function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   const d = R * c;
   return d;
-}
+};
 
-function deg2rad(deg) {
-  return deg * (Math.PI / 180);
-}
+const deg2rad = deg => deg * (Math.PI / 180);
 
 console.log(getDistanceFromLatLonInKm());

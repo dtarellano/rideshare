@@ -1,4 +1,4 @@
-const getDistanceFromLatLonInKm = (lat1, lon1, lat2, lon2) => {
+const getWaitEstimate = (lat1, lon1, lat2, lon2) => {
   const kmToMi = 0.62;
   const R = 6371;
   const dLat = deg2rad(lat2 - lat1);
@@ -13,5 +13,7 @@ const getDistanceFromLatLonInKm = (lat1, lon1, lat2, lon2) => {
 
 const deg2rad = deg => deg * (Math.PI / 180);
 
-console.log(getDistanceFromLatLonInKm(37.22, -122.2, 37.46, -122.3));
-// 57 min ...
+// console.log(getWaitEstimate(37.22, -122.2, 37.46, -122.3));
+// 52 min...
+
+module.exports.getWaitEstimate = getWaitEstimate;

@@ -1,3 +1,6 @@
+const driver = 'POINT(-122.3 37.46)';
+const rider = 'POINT(-122.2 37.22)';
+
 const getDistanceFromLatLonInKm = (lat1, lon1, lat2, lon2) => {
   const kmToMi = 0.62;
   const R = 6371;
@@ -15,3 +18,5 @@ const deg2rad = deg => deg * (Math.PI / 180);
 
 console.log(getDistanceFromLatLonInKm(37.22, -122.2, 37.46, -122.3));
 // 57 min ...
+
+console.log(Number());

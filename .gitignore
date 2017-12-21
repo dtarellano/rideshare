@@ -13,3 +13,4 @@ node_modules/
 dsc.tar.gz
 log.csv
 analytics.csv
+aws/config.json

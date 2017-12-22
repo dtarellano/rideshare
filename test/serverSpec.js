@@ -5,7 +5,7 @@ const axios = require('axios');
 
 require('dotenv').config();
 
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 1337;
 
 const baseUrl = `http://localhost:${port}`;
 
@@ -25,4 +25,3 @@ describe('GET /', () => {
 });
 
 /* eslint-enable */
-

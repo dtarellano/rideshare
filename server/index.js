@@ -9,6 +9,7 @@ const db = require('../database/cassandradb.js').db;
 const getWaitEstimate = require('../helpers/getWaitEstimate.js').getWaitEstimate;
 const driverSelector = require('../helpers/driverSelector.js').driverSelector;
 const analytics = require('../helpers/log.js').analytics;
+const sqs = require('../aws/sqs_createQueue.js').sqs;
 
 let queue = [];
 

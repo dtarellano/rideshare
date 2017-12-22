@@ -15,3 +15,5 @@ sqs.createQueue(params, (err, data) => {
     console.log('Success', data.QueueUrl);
   }
 });
+
+module.exports.sqs = sqs;

@@ -1,4 +1,5 @@
 const faker = require('faker');
+const sqs = require('./sqs_createQueue.js');
 
 const createLocation = () => {
   const minLog = -122.75;
@@ -16,4 +17,11 @@ const newDriver = () => {
     last_checkin: newDate(),
     location: createLocation(),
   };
+  sqs.sendMessage({ driver }, (err, data) => {
+    if (err) {
+      console.log('Error: ', err);
+    }
+  });
 };
+
+module.exports.newDriver = newDriver;

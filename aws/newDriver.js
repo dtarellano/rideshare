@@ -1,5 +1,5 @@
 const faker = require('faker');
-const sqs = require('./sqs_createQueue.js');
+const sqs = require('./sqs_createQueue.js').sqs;
 
 const createLocation = () => {
   const minLog = -122.75;

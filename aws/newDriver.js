@@ -1,20 +1,19 @@
 const faker = require('faker');
-const sqs = require('./sqs_createQueue.js').sqs;
+// const sqs = require('./sqs_createQueue.js').sqs;
 
 const createLocation = () => {
   const minLog = -122.75;
   const minLat = 36.8;
-  const log = (minLog + Math.random()).toPrecision(4);
-  const lat = (minLat + Math.random()).toPrecision(4);
+  const log = (minLog + Math.random()).toPrecision(6);
+  const lat = (minLat + Math.random()).toPrecision(6);
   return `POINT(${log} ${lat})`;
 };
 
 const newDriver = () => {
   const driver = {
-    name: faker.name.findName(),
+    first_name: faker.name.firstName(),
+    last_name: faker.name.lastName(),
     joined: new Date(),
-    available: true,
-    last_checkin: newDate(),
     location: createLocation(),
   };
   sqs.sendMessage({ driver }, (err, data) => {

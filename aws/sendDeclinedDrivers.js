@@ -1,4 +1,4 @@
-const sqs = require('./sqs_createQueue.js').sqs;
+// const sqs = require('./sqs_createQueue.js').sqs;
 
 const sendDeclinedDrivers = (drivers, driver) => {
   const declinedDrivers = [];

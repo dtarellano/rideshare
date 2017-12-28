@@ -9,7 +9,7 @@ const db = require('../database/cassandradb.js').db;
 const getWaitEstimate = require('../helpers/getWaitEstimate.js').getWaitEstimate;
 const driverSelector = require('../helpers/driverSelector.js').driverSelector;
 const analytics = require('../helpers/log.js').analytics;
-const sqs = require('../aws/sqs_createQueue.js').sqs;
+// const sqs = require('../aws/sqs_createQueue.js').sqs;
 
 let queue = [];
 
@@ -47,6 +47,7 @@ if (cluster.isMaster) {
     }, 5000);
 
     queue.push(analytics(request.body.ride_id, driver, request.body.rider_loc, waitTime));
+
     // axios.post('toRiderclient', {
     //   query: {
     //     ride_id: request.body.ride_id,
